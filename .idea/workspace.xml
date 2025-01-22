@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="228f972e-2c33-49b9-b2cb-6b37bea48ade" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/AppInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/controller/LoginFormController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/db/DBConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/view/tdm/UserTM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/stitchwave/LoginFrom.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/stitchwave/assests/styles/Styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/stitchwave/assests/styles/dashboard_styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/stitchwave/schema.sql" afterDir="false" />
-    </list>
+    <list default="true" id="228f972e-2c33-49b9-b2cb-6b37bea48ade" name="Changes" comment="layerdProject" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -126,11 +105,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1737533695321</updated>
-      <workItem from="1737533696378" duration="6208000" />
+      <workItem from="1737533696378" duration="6643000" />
     </task>
+    <task id="LOCAL-00001" summary="layerdProject">
+      <option name="closed" value="true" />
+      <created>1737550072064</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1737550072066</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="layerdProject" />
+    <option name="LAST_COMMIT_MESSAGE" value="layerdProject" />
   </component>
 </project>

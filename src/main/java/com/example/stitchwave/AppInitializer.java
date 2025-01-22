@@ -18,7 +18,7 @@ public class AppInitializer extends Application {
     public void start(Stage stage) throws Exception {
         stage.setTitle("STITCHWAVE");
         stage.setScene(new Scene(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/example/stitchwave/LoginForm.fxml")))));
-        stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/assests/images/3dmachine.png"))));
+        stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/example/stitchwave/assests/images/3dmachine.png"))));
         stage.show();
     }
 }
