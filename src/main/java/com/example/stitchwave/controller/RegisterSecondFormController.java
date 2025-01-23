@@ -63,12 +63,12 @@ public class RegisterSecondFormController {
 
     @FXML
     void imgBackOnAction(MouseEvent event) {
-        loadUI("/view/RegisterForm.fxml");
+        loadUI("/com/example/stitchwave/RegisterForm.fxml");
     }
 
     @FXML
     void lblLoggedInOnAction(MouseEvent event) {
-        loadUI("/view/LoginForm.fxml");
+        loadUI("/com/example/stitchwave/LoginForm.fxml");
     }
 
     private void saveUser() throws SQLException {

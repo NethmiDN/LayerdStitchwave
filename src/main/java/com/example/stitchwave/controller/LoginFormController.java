@@ -1,5 +1,8 @@
 package com.example.stitchwave.controller;
 
+import com.example.stitchwave.bo.BOFactory;
+import com.example.stitchwave.bo.custom.UserBO;
+import com.example.stitchwave.dto.UserDTO;
 import com.jfoenix.controls.JFXButton;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -18,6 +21,8 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -61,9 +66,26 @@ public class LoginFormController implements Initializable {
 
     private boolean isPasswordVisible = false;
 
-    @FXML
-    void btnLoginOnAction(ActionEvent event) {
+    public UserBO userBO = (UserBO) BOFactory.getInstance().getBO(BOFactory.BOType.USER);
 
+    @FXML
+    void btnLoginOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+        if (checkUsernameAndPassword()) {
+            loadUI("/com/example/stitchwave/DashboardForm.fxml");
+        } else {
+            showErrorMessage("Incorrect username or password. Please try again.");
+        }
+    }
+
+    private boolean checkUsernameAndPassword() throws SQLException, ClassNotFoundException {
+        List<UserDTO> allUsers = userBO.getAllUser();
+
+        for (UserDTO user : allUsers) {
+            if (user.getUsername().equals(txtUsername.getText()) && user.getPassword().equals(txtPassword.getText())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @FXML
@@ -82,7 +104,7 @@ public class LoginFormController implements Initializable {
 
     @FXML
     void lblCreateNewAccountOnAction(MouseEvent event) {
-        loadUI("/view/RegisterForm.fxml");
+        loadUI("/com/example/stitchwave/RegisterForm.fxml");
 
     }
 

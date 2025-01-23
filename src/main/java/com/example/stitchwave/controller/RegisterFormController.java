@@ -56,7 +56,7 @@ public class RegisterFormController {
 
     @FXML
     void lblLoggedInOnAction(MouseEvent event) {
-        loadUI("/view/LoginForm.fxml");
+        loadUI("/com/example/stitchwave/LoginForm.fxml");
     }
 
     private void navigateToSecondRegisterPage() throws SQLException {
@@ -69,7 +69,7 @@ public class RegisterFormController {
                 registeringUser.setEmail(txtEmail.getText());
                 registeringUser.setFirstName(txtFirstName.getText());
                 registeringUser.setLastName(txtLastName.getText());*/
-            loadUI("/view/registerSecondForm.fxml");
+            loadUI("/com/example/stitchwave/RegisterSecondForm.fxml");
         }
     }
 

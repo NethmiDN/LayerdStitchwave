@@ -1,4 +1,19 @@
 package com.example.stitchwave.bo.custom;
 
-public interface UserBO {
+import com.example.stitchwave.bo.SuperBO;
+import com.example.stitchwave.dto.UserDTO;
+import com.example.stitchwave.entity.User;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+public interface UserBO extends SuperBO {
+    public boolean saveUser(User DTO) throws SQLException, ClassNotFoundException ;
+    public boolean updateUser(User DTO) throws SQLException, ClassNotFoundException;
+    public boolean isEmailExists(String email) throws SQLException, ClassNotFoundException ;
+    public String getNextUserId() throws SQLException, ClassNotFoundException ;
+    public ArrayList<UserDTO> getAllUser() throws SQLException, ClassNotFoundException ;
+    public ArrayList<UserDTO> getAllUserIds() throws SQLException, ClassNotFoundException ;
+    public User findByUserId(String selectedId) throws SQLException, ClassNotFoundException ;
+
 }

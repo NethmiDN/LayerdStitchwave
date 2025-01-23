@@ -8,6 +8,7 @@ module com.example.stitchwave {
     requires net.sf.jasperreports.core;
     requires java.mail;
     requires javafx.graphics;
+    requires org.checkerframework.checker.qual;
 
     opens com.example.stitchwave to javafx.fxml;
     opens com.example.stitchwave.controller to javafx.fxml;
