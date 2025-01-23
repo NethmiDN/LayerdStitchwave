@@ -82,6 +82,7 @@ public class LoginFormController implements Initializable {
 
     @FXML
     void lblCreateNewAccountOnAction(MouseEvent event) {
+        loadUI("/view/RegisterForm.fxml");
 
     }
 

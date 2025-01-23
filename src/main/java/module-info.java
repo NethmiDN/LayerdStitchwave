@@ -7,6 +7,7 @@ module com.example.stitchwave {
     requires lombok;
     requires net.sf.jasperreports.core;
     requires java.mail;
+    requires javafx.graphics;
 
     opens com.example.stitchwave to javafx.fxml;
     opens com.example.stitchwave.controller to javafx.fxml;
