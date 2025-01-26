@@ -1,6 +1,6 @@
 package com.example.stitchwave.bo;
 
-import com.example.stitchwave.bo.custom.impl.UserBOImpl;
+import com.example.stitchwave.bo.custom.impl.*;
 
 public class BOFactory {
     private static BOFactory boFactory;
@@ -10,13 +10,21 @@ public class BOFactory {
     }
 
     public enum BOType{
-        USER
+        USER,CUSTOMER,EMPLOYEE,PAYMENT,SUPPLIER
     }
 
     public SuperBO getBO(BOType type) {
         switch (type) {
             case USER:
                 return new UserBOImpl();
+            case CUSTOMER:
+                return new CustomerBOImpl();
+            case EMPLOYEE:
+                return new EmployeeBOImpl();
+            case PAYMENT:
+                return new PaymentBOImpl();
+            case SUPPLIER:
+                return new SupplierBOImpl();
             default:
                 return null;
         }

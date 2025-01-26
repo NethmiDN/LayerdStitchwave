@@ -110,6 +110,7 @@ public class LoginFormController implements Initializable {
 
     @FXML
     void lblForgotPasswordOnAction(MouseEvent event) {
+        loadUI("/com/example/stitchwave/ForgetPasswordForm.fxml");
 
     }
 

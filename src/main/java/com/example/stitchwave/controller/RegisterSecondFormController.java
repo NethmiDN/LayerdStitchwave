@@ -1,5 +1,7 @@
 package com.example.stitchwave.controller;
 
+import com.example.stitchwave.bo.BOFactory;
+import com.example.stitchwave.bo.custom.UserBO;
 import com.jfoenix.controls.JFXButton;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -51,13 +53,15 @@ public class RegisterSecondFormController {
 
     private static final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$";
 
+    public UserBO userBO = (UserBO) BOFactory.getInstance().getBO(BOFactory.BOType.USER);
+
     @FXML
     public void initialize() {
         txtUsername.requestFocus();
     }
 
     @FXML
-    void btnRegisterOnAction(ActionEvent event) throws SQLException {
+    void btnRegisterOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
         saveUser();
     }
 
@@ -71,7 +75,7 @@ public class RegisterSecondFormController {
         loadUI("/com/example/stitchwave/LoginForm.fxml");
     }
 
-    private void saveUser() throws SQLException {
+    private void saveUser() throws SQLException, ClassNotFoundException {
         if (areFieldsEmpty()) {
             showErrorMessage("*Required fields cannot be empty.");
         } else if (!isValidUsername(txtUsername.getText())) {
@@ -81,14 +85,14 @@ public class RegisterSecondFormController {
         } else if (!txtPassword.getText().equals(txtConfirmPassword.getText())) {
             showErrorMessage("*Confirm password does not match.");
         } else {
-           /* RegisterFormController.registeringUser.setUsername(txtUsername.getText());
+            RegisterFormController.registeringUser.setUsername(txtUsername.getText());
             RegisterFormController.registeringUser.setPassword(txtConfirmPassword.getText());
 
-            if (userModel.saveUser(RegisterFormController.registeringUser)) {
-                loadUI("/view/LoginForm.fxml");
+            if (userBO.saveUser(RegisterFormController.registeringUser)) {
+                loadUI("/com/example/stitchwave/LoginForm.fxml");
             } else {
                 showErrorMessage("*User not saved.");
-            }*/
+            }
         }
     }
 

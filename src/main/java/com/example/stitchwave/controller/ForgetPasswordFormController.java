@@ -2,7 +2,6 @@ package com.example.stitchwave.controller;
 
 import com.example.stitchwave.bo.BOFactory;
 import com.example.stitchwave.bo.custom.UserBO;
-import com.example.stitchwave.dto.UserDTO;
 import com.jfoenix.controls.JFXButton;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -11,24 +10,26 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
 import java.io.IOException;
+import java.security.SecureRandom;
 import java.sql.SQLException;
 import java.util.Objects;
 
-public class RegisterFormController {
+public class ForgetPasswordFormController {
 
     @FXML
-    private JFXButton btnNext;
+    private JFXButton btnSubmit;
+
+    @FXML
+    private ImageView imgBack;
 
     @FXML
     private Label lblError;
-
-    @FXML
-    private Label lblLoggedIn;
 
     @FXML
     private Label lblLogin;
@@ -39,53 +40,55 @@ public class RegisterFormController {
     @FXML
     private TextField txtEmail;
 
-    @FXML
-    private TextField txtFirstName;
-
-    @FXML
-    private TextField txtLastName;
-
-    public static UserDTO registeringUser = new UserDTO();
-
-    private static final String EMAIL_PATTERN = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@gmail\\.com$";
+    public static String emailAddress = "";
 
     public UserBO userBO = (UserBO) BOFactory.getInstance().getBO(BOFactory.BOType.USER);
 
+    public static String otpGenerated = "0000";
+
+    SendMailController sendMailController = new SendMailController();
+
+    @FXML
     public void initialize() {
-        txtFirstName.requestFocus();
-    }
-
-
-    @FXML
-    void btnNextOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
-        navigateToSecondRegisterPage();
+        txtEmail.requestFocus();
     }
 
     @FXML
-    void lblLoggedInOnAction(MouseEvent event) {
-        loadUI("/com/example/stitchwave/LoginForm.fxml");
-    }
-
-    private void navigateToSecondRegisterPage() throws SQLException, ClassNotFoundException {
+    void btnSubmitOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
         if (areFieldsEmpty()) {
-            showErrorMessage("*Required fields cannot be empty.");
-        } else if (!isValidEmail(txtEmail.getText())) {
-            showErrorMessage("*Invalid email format.");
+            showErrorMessage("*Required fields are empty");
+        } else if (!isValidEmailAddress()) {
+            showErrorMessage("*Invalid email address");
         } else {
-                registeringUser.setUserId(userBO.getNextUserId());
-                registeringUser.setEmail(txtEmail.getText());
-                registeringUser.setFirstName(txtFirstName.getText());
-                registeringUser.setLastName(txtLastName.getText());
-            loadUI("/com/example/stitchwave/RegisterSecondForm.fxml");
+            emailAddress = txtEmail.getText();
+
+            String recipientEmail = emailAddress; // Replace with the recipient's email
+            String otp = generateOTP();
+            otpGenerated = generateOTP();// Generate OTP
+            //System.out.println("Generated OTP: " + otp);
+            sendMailController.sendEmail(recipientEmail, otpGenerated);
+
+            loadUI("/com/example/stitchwave/OTPForm.fxml");
         }
     }
 
-    private boolean areFieldsEmpty() {
-        return txtEmail.getText().isEmpty() || txtFirstName.getText().isEmpty() || txtLastName.getText().isEmpty();
+    public static String generateOTP() {
+        SecureRandom random = new SecureRandom();
+        int otp = 1000 + random.nextInt(9000); // Generates a 4-digit OTP
+        return String.valueOf(otp);
     }
 
-    private boolean isValidEmail(String email) {
-        return email.matches(EMAIL_PATTERN);
+    private boolean isValidEmailAddress() throws SQLException, ClassNotFoundException {
+        return userBO.isEmailExists(txtEmail.getText());
+    }
+
+    private boolean areFieldsEmpty() {
+        return txtEmail.getText().isEmpty();
+    }
+
+    @FXML
+    void imgBackOnAction(MouseEvent event) {
+        loadUI("/com/example/stitchwave/LoginForm.fxml");
     }
 
     private void loadUI(String resource) {
@@ -107,5 +110,4 @@ public class RegisterFormController {
         ));
         timeline.play();
     }
-
 }

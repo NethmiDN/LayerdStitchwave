@@ -13,19 +13,21 @@ public class UserBOImpl implements UserBO {
     UserDAO userDAO = (UserDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOType.USER);
 
     @Override
-    public boolean saveUser(User DTO) throws SQLException, ClassNotFoundException {
+    public boolean saveUser(UserDTO DTO) throws SQLException, ClassNotFoundException {
         User user = new User(DTO.getUserId(), DTO.getFirstName(), DTO.getLastName(), DTO.getUsername(), DTO.getEmail(), DTO.getPassword());
         return userDAO.save(user);
     }
 
     @Override
-    public boolean updateUser(User DTO) throws SQLException, ClassNotFoundException {
+    public boolean updateUser(UserDTO DTO) throws SQLException, ClassNotFoundException {
         User user = new User(DTO.getUserId(),DTO.getFirstName(),DTO.getLastName(),DTO.getUsername(),DTO.getEmail(),DTO.getPassword());
-        return userDAO.update(user);    }
+        //System.out.println("UserBOImpl: " + user);
+        return userDAO.update(user);
+    }
 
     @Override
     public boolean isEmailExists(String email) throws SQLException, ClassNotFoundException {
-        return isEmailExists(email);
+        return userDAO.isEmailExists(email);
     }
 
     @Override
@@ -47,23 +49,17 @@ public class UserBOImpl implements UserBO {
             userDTO.setPassword(user.getPassword());
             userDTOS.add(userDTO);
         }
-        return userDTOS;    }
+        return userDTOS;
+    }
 
     @Override
-    public ArrayList<UserDTO> getAllUserIds() throws SQLException, ClassNotFoundException {
+    public ArrayList<Object> getAllUserIds() throws SQLException, ClassNotFoundException {
         ArrayList<User> users = userDAO.getAllIds();
-        ArrayList<UserDTO> userDTOS = new ArrayList<>();
+        ArrayList<Object> userIds = new ArrayList<>();
         for (User user : users) {
-            UserDTO userDTO = new UserDTO();
-            userDTO.setUserId(user.getUserId());
-            userDTO.setFirstName(user.getFirstName());
-            userDTO.setLastName(user.getLastName());
-            userDTO.setUsername(user.getUsername());
-            userDTO.setEmail(user.getEmail());
-            userDTO.setPassword(user.getPassword());
-            userDTOS.add(userDTO);
+            userIds.add(user.getUserId());
         }
-        return userDTOS;
+        return userIds;
     }
 
     @Override
