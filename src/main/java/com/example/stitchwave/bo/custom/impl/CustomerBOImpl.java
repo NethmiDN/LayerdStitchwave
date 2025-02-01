@@ -50,13 +50,8 @@ public class CustomerBOImpl implements CustomerBO {
     }
 
     @Override
-    public ArrayList<Object> getAllCustomerIds() throws SQLException, ClassNotFoundException {
-        ArrayList<Customer> customers = customerDAO.getAllIds();
-        ArrayList<Object> customerIds = new ArrayList<>();
-        for (Customer customer : customers) {
-            customerIds.add(customer.getCustomer_id());
-        }
-        return customerIds;
+    public ArrayList<String> getAllCustomerIds() throws SQLException, ClassNotFoundException {
+        return customerDAO.getAllIds();
     }
 
     @Override
@@ -69,5 +64,4 @@ public class CustomerBOImpl implements CustomerBO {
         customerDAO.delete(id);
         return false;
     }
-
 }

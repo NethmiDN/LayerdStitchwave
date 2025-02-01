@@ -10,7 +10,7 @@ public class BOFactory {
     }
 
     public enum BOType{
-        USER,CUSTOMER,EMPLOYEE,PAYMENT,SUPPLIER
+        USER,CUSTOMER,EMPLOYEE,PAYMENT,SUPPLIER,FABRIC,CLOTHES_ORDER_DETAIL,ORDERS,SEWN_CLOTHES_STOCK,STYLE,SUPPLIER_ORDER
     }
 
     public SuperBO getBO(BOType type) {
@@ -25,6 +25,18 @@ public class BOFactory {
                 return new PaymentBOImpl();
             case SUPPLIER:
                 return new SupplierBOImpl();
+            case FABRIC:
+                return new FabricBOImpl();
+            case CLOTHES_ORDER_DETAIL:
+                return new ClothesOrderDetailBOImpl();
+            case ORDERS:
+                return new OrdersBOImpl();
+            case SEWN_CLOTHES_STOCK:
+                return new SewnClothesStockBOImpl();
+            case STYLE:
+                return new StyleBOImpl();
+            case SUPPLIER_ORDER:
+                return new SupplierOrderBOImpl();
             default:
                 return null;
         }

@@ -1002,7 +1002,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </schema>
     <schema id="290" parent="1" name="garment">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2025-01-22.11:15:20</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-02-01.13:32:17</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="291" parent="1" name="inclass">

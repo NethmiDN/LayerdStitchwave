@@ -19,4 +19,16 @@ public class SQLUtil {
             return (T) (Boolean) (pstm.executeUpdate()>0);
         }
     }
+
+    public static void setAutoCommit(boolean autoCommit) throws SQLException, ClassNotFoundException {
+        DBConnection.getDbConnection().getConnection().setAutoCommit(autoCommit);
+    }
+
+    public static void commit() throws SQLException, ClassNotFoundException {
+        DBConnection.getDbConnection().getConnection().commit();
+    }
+
+    public static void rollback() throws SQLException, ClassNotFoundException {
+        DBConnection.getDbConnection().getConnection().rollback();
+    }
 }

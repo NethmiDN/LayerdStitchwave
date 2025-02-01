@@ -16,8 +16,9 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public boolean update(User DTO) throws SQLException, ClassNotFoundException {
-        return SQLUtil.execute("UPDATE user SET password = ? where email = ?",DTO.getPassword(),DTO.getEmail());
+    public boolean update(User user) throws SQLException, ClassNotFoundException {
+        String query = "UPDATE user SET firstName=?, lastName=?, username=?, email=?, password=? WHERE userId=?";
+        return SQLUtil.execute(query, user.getFirstName(), user.getLastName(), user.getUsername(), user.getEmail(), user.getPassword(), user.getUserId());
     }
 
     @Override
@@ -36,7 +37,7 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public List<User> getAll() throws SQLException, ClassNotFoundException {
-        ResultSet rst = SQLUtil.execute("SELECT *FROM user");
+        ResultSet rst = SQLUtil.execute("SELECT * FROM user");
 
         ArrayList<User> userList = new ArrayList<>();
 
@@ -55,31 +56,22 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public ArrayList<User> getAllIds() throws SQLException, ClassNotFoundException {
+    public ArrayList<String> getAllIds() throws SQLException, ClassNotFoundException {
         ResultSet rst = SQLUtil.execute("SELECT userId FROM user");
 
-        ArrayList<User> userList = new ArrayList<>();
+        ArrayList<String> user_ids = new ArrayList<>();
 
         while (rst.next()) {
-            User user = new User(
-                    rst.getString("userId"),
-                    rst.getString("firstName"),
-                    rst.getString("lastName"),
-                    rst.getString("username"),
-                    rst.getString("email"),
-                    rst.getString("password")
-            );
-            userList.add(user);
+            user_ids.add(rst.getString("userId"));
         }
-        return userList;
+        return user_ids;
     }
 
     @Override
     public User findById(String selectedId) throws SQLException, ClassNotFoundException {
-        ResultSet rst = SQLUtil.execute("SELECT * FROM user WHERE userId=?",selectedId);
-        ArrayList<User> userDTOS = new ArrayList<>();
-        while (rst.next()){
-            User user = new User(
+        ResultSet rst = SQLUtil.execute("SELECT * FROM user WHERE userId=?", selectedId);
+        if (rst.next()) {
+            return new User(
                     rst.getString("userId"),
                     rst.getString("firstName"),
                     rst.getString("lastName"),
@@ -87,8 +79,7 @@ public class UserDAOImpl implements UserDAO {
                     rst.getString("email"),
                     rst.getString("password")
             );
-            userDTOS.add(user);
         }
-        return userDTOS.get(0);
+        return null;
     }
 }

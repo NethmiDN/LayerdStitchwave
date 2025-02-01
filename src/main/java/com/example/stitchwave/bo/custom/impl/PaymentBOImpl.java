@@ -50,13 +50,8 @@ public class PaymentBOImpl implements PaymentBO {
     }
 
     @Override
-    public ArrayList<Object> getAllPaymentIds() throws SQLException, ClassNotFoundException {
-        ArrayList<Payment> payments = paymentDAO.getAllIds();
-        ArrayList<Object> paymentIds = new ArrayList<>();
-        for (Payment payment : payments) {
-            paymentIds.add(payment.getPayment_id());
-        }
-        return paymentIds;
+    public ArrayList<String> getAllPaymentIds() throws SQLException, ClassNotFoundException {
+        return paymentDAO.getAllIds();
     }
 
     @Override

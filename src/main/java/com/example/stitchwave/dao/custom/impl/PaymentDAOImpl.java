@@ -45,35 +45,29 @@ public class PaymentDAOImpl implements PaymentDAO {
         return SQLUtil.execute("DELETE FROM payment WHERE payment_id=?", payment_id);
     }
 
-    public ArrayList<Payment> getAllIds() throws SQLException, ClassNotFoundException {
+    public ArrayList<String> getAllIds() throws SQLException, ClassNotFoundException {
         ResultSet rst = SQLUtil.execute("SELECT payment_id FROM payment");
 
-        ArrayList<Payment> payment_ids = new ArrayList<>();
+        ArrayList<String> payment_ids = new ArrayList<>();
 
         while (rst.next()) {
-            Payment payment = new Payment(
-                    rst.getString("payment_id"),  // customer ID
-                    rst.getDouble("amount"),  // Name
-                    rst.getDate("date").toLocalDate()  // Contact
-            );
-            payment_ids.add(payment);
+            payment_ids.add(rst.getString("payment_id"));
         }
         return payment_ids;
     }
 
     public Payment findById(String selectedPayId) throws SQLException, ClassNotFoundException {
-        ResultSet rst = SQLUtil.execute("SELECT * FROM payment WHERE payment_id=?", selectedPayId);
-
+        ResultSet rst = SQLUtil.execute("SELECT * FROM payment WHERE payment_id = ?", selectedPayId);
         ArrayList<Payment> payments = new ArrayList<>();
         while (rst.next()) {
             Payment payment = new Payment(
-                    rst.getString("payment_id"),  // customer ID
-                    rst.getDouble("amount"),  // Name
-                    rst.getDate("date").toLocalDate()  // Contact
+                    rst.getString("payment_id"),  // payment ID
+                    rst.getDouble("amount"),
+                    rst.getDate("date").toLocalDate()
             );
             payments.add(payment);
         }
-        return payments.get(0);
+        return null;
     }
 
 }

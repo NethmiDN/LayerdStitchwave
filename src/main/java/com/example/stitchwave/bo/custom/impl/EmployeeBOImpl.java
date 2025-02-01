@@ -50,13 +50,8 @@ public class EmployeeBOImpl implements EmployeeBO{
     }
 
     @Override
-    public ArrayList<Object> getAllEmployeeIds() throws SQLException, ClassNotFoundException {
-        ArrayList<Employee> employees = employeeDAO.getAllIds();
-        ArrayList<Object> employeeIds = new ArrayList<>();
-        for (Employee employee : employees) {
-            employeeIds.add(employee.getEmployee_id());
-        }
-        return employeeIds;
+    public ArrayList<String> getAllEmployeeIds() throws SQLException, ClassNotFoundException {
+        return employeeDAO.getAllIds();
     }
 
     @Override

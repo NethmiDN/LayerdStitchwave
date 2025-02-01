@@ -1,5 +1,7 @@
 package com.example.stitchwave.controller;
 
+import com.example.stitchwave.bo.BOFactory;
+import com.example.stitchwave.bo.custom.SewnClothesStockBO;
 import javafx.animation.FadeTransition;
 import javafx.animation.ParallelTransition;
 import javafx.animation.ScaleTransition;
@@ -23,6 +25,8 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -74,6 +78,9 @@ public class DashboardFormController implements Initializable {
 
     private ScheduledExecutorService scheduler;
 
+    public SewnClothesStockBO sewnClothesStockBO = (SewnClothesStockBO) BOFactory.getInstance().getBO(BOFactory.BOType.SEWN_CLOTHES_STOCK);
+
+
     @FXML
     public void initialize(URL url, ResourceBundle rb) {
         navigateTo("/com/example/stitchwave/Home.fxml");
@@ -110,7 +117,7 @@ public class DashboardFormController implements Initializable {
     @FXML
     private void checkQtyAvaialbility() {
         try {
-           /* Map<String, Integer> lowStockItems = sewnClothesStockModel.getLowStockItems(5000);
+            Map<String, Integer> lowStockItems = sewnClothesStockBO.getLowStockItems(5000);
 
             if (!lowStockItems.isEmpty()) {
                 StringBuilder alertText = new StringBuilder("⚠️ Low Stock Alert: ");
@@ -125,7 +132,7 @@ public class DashboardFormController implements Initializable {
                 }
             } else {
                 notificationbtn.setVisible(false);
-            }*/
+            }
         } catch (Exception e) {
             e.printStackTrace();
             new Alert(Alert.AlertType.ERROR, "Failed to check stock quantities!").show();
@@ -149,7 +156,8 @@ public class DashboardFormController implements Initializable {
 
     @FXML
     void clothesorderdetailbtnOnAction(ActionEvent event) {
-
+        navigateTo("/com/example/stitchwave/ClothesOrderDetailForm.fxml");
+        onButtonClicked(clothesorderdetailbtn);
     }
 
     @FXML
@@ -166,7 +174,8 @@ public class DashboardFormController implements Initializable {
 
     @FXML
     void fabricbtnOnAction(ActionEvent event) {
-
+        navigateTo("/com/example/stitchwave/FabricOrderForm.fxml");
+        onButtonClicked(fabricbtn);
     }
 
     @FXML
@@ -181,9 +190,9 @@ public class DashboardFormController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/stitchwave/LowStockPopUp.fxml"));
             AnchorPane popupContent = loader.load();
 
-           // LowStockPopUpController popupController = loader.getController();
+            LowStockPopUPController popupController = loader.getController();
 
-            //popupController.setLowStockData(sewnClothesStockModel.getLowStockItems(5000));
+            popupController.setLowStockData(sewnClothesStockBO.getLowStockItems(5000));
 
             Stage popupStage = new Stage();
             popupStage.initModality(Modality.APPLICATION_MODAL);
@@ -195,10 +204,12 @@ public class DashboardFormController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
             new Alert(Alert.AlertType.ERROR, "Failed to load popup!").show();
-        }/* catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             new Alert(Alert.AlertType.ERROR, "Database error occurred!").show();
-        }*/
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -296,17 +307,20 @@ public class DashboardFormController implements Initializable {
 
     @FXML
     void settingbtnOnAction(MouseEvent event) {
-
+        navigateTo("/com/example/stitchwave/SettingForm.fxml");
+        onButtonClickeda(settingbtn);
     }
 
     @FXML
     void sewnclothesstockbtnOnAction(ActionEvent event) {
-
+        navigateTo("/com/example/stitchwave/SewnClothesStockForm.fxml");
+        onButtonClicked(sewnclothesstockbtn);
     }
 
     @FXML
     void stylebtnOnAction(ActionEvent event) {
-
+        navigateTo("/com/example/stitchwave/StyleForm.fxml");
+        onButtonClicked(stylebtn);
     }
 
     @FXML
@@ -317,7 +331,8 @@ public class DashboardFormController implements Initializable {
 
     @FXML
     void supplierorderbtnOnAction(ActionEvent event) {
-
+        navigateTo("/com/example/stitchwave/SupplierOrderForm.fxml");
+        onButtonClicked(supplierorderbtn);
     }
 
     private void navigateTo(String fxmlPath) {

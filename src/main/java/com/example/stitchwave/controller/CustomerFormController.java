@@ -181,7 +181,7 @@ public class CustomerFormController implements Initializable{
 
                 // Compile the Jasper report from a JRXML file (report template)
                 // The report template is located in the "resources/report" folder of the project
-                JasperReport jasperReport = JasperCompileManager.compileReport(getClass().getResourceAsStream("/report/CustomerReportNew.jrxml"));
+                JasperReport jasperReport = JasperCompileManager.compileReport(getClass().getResourceAsStream("/com/example/stitchwave/assests/report/CustomerReportNew.jrxml"));
 
                 // Fill the report with the compiled report object, parameters, and a database connection
                 // This prepares the report with real data from the database

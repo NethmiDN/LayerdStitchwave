@@ -45,18 +45,13 @@ public class SupplierDAOImpl implements SupplierDAO {
         return SQLUtil.execute("DELETE FROM supplier WHERE supplier_id=?", supplier_id);
     }
 
-    public ArrayList<Supplier> getAllIds() throws SQLException, ClassNotFoundException {
+    public ArrayList<String> getAllIds() throws SQLException, ClassNotFoundException {
         ResultSet rst = SQLUtil.execute("SELECT supplier_id FROM supplier");
 
-        ArrayList<Supplier> supplier_ids = new ArrayList<>();
+        ArrayList<String> supplier_ids = new ArrayList<>();
 
         while (rst.next()) {
-            Supplier supplier = new Supplier(
-                    rst.getString("supplier_id"),  // customer ID
-                    rst.getString("name"),  // Name
-                    rst.getString("contact")  // Contact
-            );
-            supplier_ids.add(supplier);
+            supplier_ids.add(rst.getString("supplier_id"));
         }
         return supplier_ids;
     }

@@ -45,34 +45,26 @@ public class CustomerDAOImpl implements CustomerDAO {
         return SQLUtil.execute("DELETE FROM customer WHERE customer_id=?", customer_id);
     }
 
-    public ArrayList<Customer> getAllIds() throws SQLException, ClassNotFoundException {
+    public ArrayList<String> getAllIds() throws SQLException, ClassNotFoundException {
         ResultSet rst = SQLUtil.execute("SELECT customer_id FROM customer");
 
-        ArrayList<Customer> customer_ids = new ArrayList<>();
+        ArrayList<String> customer_ids = new ArrayList<>();
 
         while (rst.next()) {
-            Customer customer = new Customer(
-                    rst.getString("customer_id"),  // customer ID
-                    rst.getString("name"),  // Name
-                    rst.getString("contact")  // Contact
-            );
-            customer_ids.add(customer);
+            customer_ids.add(rst.getString("customer_id"));
         }
         return customer_ids;
     }
 
     public Customer findById(String selectedCusId) throws SQLException, ClassNotFoundException {
         ResultSet rst = SQLUtil.execute("SELECT * FROM customer WHERE customer_id=?", selectedCusId);
-
-        ArrayList<Customer> customers = new ArrayList<>();
-        while (rst.next()) {
-            Customer customer = new Customer(
-                    rst.getString("customer_id"),  // customer ID
-                    rst.getString("name"),  // Name
-                    rst.getString("contact")  // Contact
+        if (rst.next()) {
+            return new Customer(
+                    rst.getString(1),  // customer ID
+                    rst.getString(2),  // Name
+                    rst.getString(3)  // Contact
             );
-            customers.add(customer);
         }
-        return customers.get(0);
+        return null;
     }
 }

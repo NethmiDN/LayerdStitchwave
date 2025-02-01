@@ -16,7 +16,7 @@ public interface PaymentBO extends SuperBO {
 
     ArrayList<PaymentDTO> getAllPayment() throws SQLException, ClassNotFoundException;
 
-    ArrayList<Object> getAllPaymentIds() throws SQLException, ClassNotFoundException;
+    ArrayList<String> getAllPaymentIds() throws SQLException, ClassNotFoundException;
 
     Payment findByPaymentId(String selectedId) throws SQLException, ClassNotFoundException;
 
