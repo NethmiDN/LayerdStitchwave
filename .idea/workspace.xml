@@ -4,92 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="228f972e-2c33-49b9-b2cb-6b37bea48ade" name="Changes" comment="packages">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/ClothesOrderDetailBO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/OrdersBO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/SewnClothesStockBO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/StyleBO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/SupplierOrderBO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/impl/ClothesOrderDetailBOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/impl/OrdersBOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/impl/SewnClothesStockBOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/impl/StyleBOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/impl/SupplierOrderBOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/controller/ClothesOrderDetailFormController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/controller/FabricOrderFormController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/controller/SettingFormController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/controller/SewnClothesStockFormController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/controller/SupplierOrderFormController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/custom/ClothesOrderDetailDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/custom/FabricOrderDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/custom/OrdersDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/custom/SewnClothesStockDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/custom/StyleDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/custom/SupplierOrderDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/custom/impl/ClothesOrderDetailDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/custom/impl/FabricOrderDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/custom/impl/OrdersDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/custom/impl/SewnClothesStockDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/custom/impl/StyleDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/custom/impl/SupplierOrderDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dto/ClothesOrderDetailDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dto/OrdersDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dto/SewnClothesStockDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dto/StyleDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dto/SupplierOrderDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/entity/ClothesOrderDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/entity/FabricOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/entity/Orders.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/entity/SewnClothesStock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/entity/Style.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/entity/SupplierOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/view/tdm/ClothesOrderDetailTM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/view/tdm/OrdersTM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/view/tdm/SewnClothesStockTM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/view/tdm/StyleTM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/view/tdm/SupplierOrderTM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/stitchwave/FabricOrderForm.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/stitchwave/SettingForm.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/stitchwave/SewnClothesStockForm.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/stitchwave/StyleForm.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/stitchwave/SupplierOrderForm.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/stitchwave/assests/report/CustomerReportNew.jrxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/00edfec6-830c-42d7-9c18-c8c089c58c91.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/00edfec6-830c-42d7-9c18-c8c089c58c91.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/BOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/BOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/CustomerBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/CustomerBO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/EmployeeBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/EmployeeBO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/FabricBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/FabricBO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/PaymentBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/PaymentBO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/SupplierBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/SupplierBO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/UserBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/UserBO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/impl/CustomerBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/impl/CustomerBOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/impl/EmployeeBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/impl/EmployeeBOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/impl/FabricBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/impl/FabricBOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/impl/PaymentBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/impl/PaymentBOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/impl/SupplierBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/impl/SupplierBOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/impl/UserBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/bo/custom/impl/UserBOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/controller/DashboardFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/controller/DashboardFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/controller/FabricFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/controller/StyleFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/controller/LowStockPopUPController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/controller/LowStockPopUPController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/CrudDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/CrudDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/DAOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/SQLUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/SQLUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/custom/FabricDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/custom/FabricDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/custom/impl/CustomerDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/custom/impl/CustomerDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/custom/impl/EmployeeDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/custom/impl/EmployeeDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/custom/impl/FabricDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/custom/impl/FabricDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/custom/impl/PaymentDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/custom/impl/PaymentDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/custom/impl/SupplierDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/custom/impl/SupplierDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/custom/impl/UserDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dao/custom/impl/UserDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dto/FabricDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/dto/FabricDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/entity/Fabric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/entity/Fabric.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/view/tdm/FabricTM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stitchwave/view/tdm/FabricTM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/stitchwave/FabricForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/stitchwave/ClothesOrderDetailForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/stitchwave/LowStockPopUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/stitchwave/LowStockPopUp.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="228f972e-2c33-49b9-b2cb-6b37bea48ade" name="Changes" comment="packages" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -137,30 +52,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.AppInitializer.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Stitchwave",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AppInitializer.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Stitchwave&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\LayerdCourseWork\Stitchwave\src\main\resources\com\example\stitchwave\assests\report" />
@@ -225,6 +140,7 @@
       <workItem from="1738384770729" duration="7000" />
       <workItem from="1738384830012" duration="3920000" />
       <workItem from="1738416701629" duration="321000" />
+      <workItem from="1738417040242" duration="502000" />
     </task>
     <task id="LOCAL-00001" summary="layerdProject">
       <option name="closed" value="true" />
@@ -274,7 +190,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737911783203</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="packages">
+      <option name="closed" value="true" />
+      <created>1738417305045</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1738417305045</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
