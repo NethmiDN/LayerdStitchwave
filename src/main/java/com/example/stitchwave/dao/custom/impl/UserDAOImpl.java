@@ -12,7 +12,7 @@ import java.util.List;
 public class UserDAOImpl implements UserDAO {
     @Override
     public boolean save(User DTO) throws SQLException, ClassNotFoundException {
-        return SQLUtil.execute("INSERT INTO user VALUES (userId,firstName,lastName,username,email,password)",DTO.getUserId(),DTO.getFirstName(),DTO.getLastName(),DTO.getUsername(),DTO.getEmail(),DTO.getPassword());
+        return SQLUtil.execute("INSERT INTO user (userId,firstName,lastName,username,email,password) VALUES (?,?,?,?,?,?)",DTO.getUserId(),DTO.getFirstName(),DTO.getLastName(),DTO.getUsername(),DTO.getEmail(),DTO.getPassword());
     }
 
     @Override

@@ -32,7 +32,13 @@ public class UserBOImpl implements UserBO {
 
     @Override
     public String getNextUserId() throws SQLException, ClassNotFoundException {
-        return userDAO.getNextId();
+        String nextId = userDAO.getNextId();
+        if (nextId != null){
+            int id = Integer.parseInt(nextId.substring(1))+1;
+            return String.format("U%03d",id);
+        }else {
+            return "U001";
+        }
     }
 
     @Override

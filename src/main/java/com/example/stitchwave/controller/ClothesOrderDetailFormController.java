@@ -200,8 +200,6 @@ public class ClothesOrderDetailFormController implements Initializable {
             if (customerDTO != null) {
                 cusnamelbl.setText(String.valueOf(customerDTO.getName()));
             }
-        } else {
-            System.out.println("nanee");
         }
     }
 
